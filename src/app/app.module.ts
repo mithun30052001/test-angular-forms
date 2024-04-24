@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TextInputComponent } from 'sd-angular-forms';
-import { DropdownComponent } from 'sd-angular-forms';
-import { RadioGroupInputComponent } from 'sd-angular-forms';
+import { TextInputComponent } from 'sd-form-libs';
+import { DropdownComponent } from 'sd-form-libs';
+import { RadioGroupInputComponent } from 'sd-form-libs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CheckboxComponent } from 'sd-angular-forms';
+import { CheckboxComponent } from 'sd-form-libs';
 import { HttpClientModule } from '@angular/common/http';
-import { ValidationErrorsComponent } from 'sd-angular-forms';
-import { TextAreaComponent } from 'sd-angular-forms';
-import { MobileNumberComponent } from 'sd-angular-forms';
+import { ValidationErrorsComponent } from 'sd-form-libs';
+import { TextAreaComponent } from 'sd-form-libs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RadioGroupInputComponent,
     CheckboxComponent,
     TextAreaComponent,
-    MobileNumberComponent,
     ValidationErrorsComponent,
     FormsModule,
     ReactiveFormsModule,
