@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
     userName: new FormControl<string>(''),
     password: new FormControl<string>(''),
     email: new FormControl<string>(''),
-    // mobileNumber: new FormControl<any>(null),
+    mobileNumber: new FormControl<any>(null),
     number: new FormControl<number | null>(null),
     dropdownOption: new FormControl<any>(null),
     radioOption: new FormControl<any>(null),

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ValidationErrorsComponent } from 'sd-form-libs';
 import { TextAreaComponent } from 'sd-form-libs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MobileNumberComponent } from 'sd-form-libs';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TextAreaComponent,
     ValidationErrorsComponent,
     FormsModule,
+    MobileNumberComponent,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule
