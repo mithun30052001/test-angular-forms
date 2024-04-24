@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-// import { mobileNumberValidator, passwordValidator, whitespaceValidator } from 'sd-form-libs';
+import { mobileNumberValidator, passwordValidator, whitespaceValidator } from 'sd-form-libs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent implements OnInit{
 
   form: FormGroup = new FormGroup({
@@ -55,10 +54,10 @@ export class AppComponent implements OnInit{
 
   createForm(){
     this.form = this.fb.group({
-      userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
-      password: [{value: 'Angular@123', disabled: false }, [Validators.required]],
+      userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator()]],
+      password: [{value: 'Angular@123', disabled: false }, [Validators.required, passwordValidator()]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
-      // mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required]],
+      mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required,mobileNumberValidator]],
       number: [{value: 5, disabled: false },[Validators.required, Validators.min(1)]],
       dropdownOption: [{value: "five", disabled: false }, [Validators.required]],
       radioOption: [{value: "male", disabled: false }, [Validators.required]],
