@@ -58,7 +58,7 @@ export class AppComponent implements OnInit{
     this.form = this.fb.group({
       userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator(),capitalsValidator()]],
       password: [{value: 'Angular@123', disabled: false }, [Validators.required, passwordValidator()]],
-      pancard: [{value: '', disabled: false }, [Validators.required, panCardValidator]],
+      pancard: [{value: 'ABCDE1234F', disabled: false }, [Validators.required, panCardValidator]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
       mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required,mobileNumberValidator]],
       number: [{value: 5, disabled: false },[Validators.required, Validators.min(1)]],
