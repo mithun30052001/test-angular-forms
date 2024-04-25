@@ -7,9 +7,18 @@
                 <div class="col-lg-6 col-md-12">
                     <sd-text-input iconName="successinfo" [isPrefix]="false" [allowOnlyText]="true" label="Username" formControlName="userName"  placeholder="Enter your username"></sd-text-input>
                 </div>
-                <div class="col-lg-6 col-md-12">
+                <div class="col-md-6">
                     <sd-text-input type="password" [allowOnlyText]="true" label="Password"  formControlName="password" placeholder=""></sd-text-input>
                 </div>
+                <div class="col-lg-12">
+                        <sd-text-input
+                            label="PAN Card Number"
+                            type="text"
+                            [allowOnlyText]="true"
+                            placeholder="Enter PAN Card Number"
+                            formControlName="pancard"
+                        ></sd-text-input>
+                    </div>
             </div>
 
             <div class="row">

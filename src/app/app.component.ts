@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { mobileNumberValidator, passwordValidator, whitespaceValidator } from 'sd-form-libs';
-import { capitalsValidator } from './custom-validation';
+import { capitalsValidator, panCardValidator } from './custom-validation';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit{
   form: FormGroup = new FormGroup({
     userName: new FormControl<string>(''),
     password: new FormControl<string>(''),
+    pancard: new FormControl<string>(''),
     email: new FormControl<string>(''),
     mobileNumber: new FormControl<any>(null),
     number: new FormControl<number | null>(null),
@@ -56,6 +58,7 @@ export class AppComponent implements OnInit{
     this.form = this.fb.group({
       userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator(),capitalsValidator()]],
       password: [{value: 'Angular@123', disabled: false }, [Validators.required, passwordValidator()]],
+      pancard: [{value: '', disabled: false }, [Validators.required, panCardValidator]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
       mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required,mobileNumberValidator]],
       number: [{value: 5, disabled: false },[Validators.required, Validators.min(1)]],
@@ -65,7 +68,7 @@ export class AppComponent implements OnInit{
       workExperience: [{value: this.experience.replace(/[\r\n]+/g, ' '), disabled: false }, [Validators.required, Validators.minLength(50), Validators.maxLength(200)]],
     })
   }
-  
+
   onSubmit(formData: any) {
     console.log(formData);
     this.submitted = true;
@@ -83,3 +86,5 @@ export class AppComponent implements OnInit{
     return this.http.post('http://localhost:3000/user',formData);
   }
 }
+
+
